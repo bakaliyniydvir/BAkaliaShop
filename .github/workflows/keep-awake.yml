@@ -1,0 +1,16 @@
+# .github/workflows/keep-awake.yml
+name: Keep Render Awake
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # runs every 10 minutes
+
+jobs:
+  ping-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render backend
+        run: |
+          curl -fsS https://bakalia.onrender.com/api \
+            && echo "🟢 Render is awake" \
+            || echo "⚠️ Ping failed"

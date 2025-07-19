@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable both-edges;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  html,
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+@layer components {
+  .app-container {
+    @apply flex flex-col min-h-screen;
+  }
+  .content {
+    @apply flex-grow px-2;
+  }
+  footer {
+    @apply bg-primary text-secondary p-4;
+  }
+  header {
+    @apply bg-primary text-secondary;
+  }
+  .responsive-table {
+    @apply overflow-x-auto w-full;
+  }
+}
+@layer base {
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .print-page,
+    .print-page * {
+      visibility: visible;
+    }
+    .print-page {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .print\\:hidden {
+      display: none !important;
+    }
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease forwards;
+}
