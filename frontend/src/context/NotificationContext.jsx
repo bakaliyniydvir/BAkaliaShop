@@ -38,7 +38,7 @@ export const NotificationProvider = ({ children }) => {
             key={n.id}
             role="alert"
             aria-live="polite"
-            className="pointer-events-auto animate-fade-in bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg flex justify-between items-center"
+            className="pointer-events-auto animate-fade-in bg-primary text-white px-4 py-2 rounded-lg shadow-lg flex justify-between items-center"
           >
             <span className="text-sm">{n.msg}</span>
             <button

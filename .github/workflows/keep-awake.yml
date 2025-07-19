@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Ping Render backend
         run: |
-          curl -fsS https://bakalia.onrender.com/api \
+          curl -fsS https://bakaliashop-8s4w.onrender.com/ \
             && echo "🟢 Render is awake" \
             || echo "⚠️ Ping failed"
